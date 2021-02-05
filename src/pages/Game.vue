@@ -132,7 +132,7 @@ export default {
         this.sounds.food.currentTime = 0;
         if (this.snake.size % 6 == 0) {
           this.sounds.humm.play();
-        } else if(this.snake.size % 10 == 0) {
+        } else if (this.snake.size % 10 == 0) {
           this.sounds.laugh.play();
         } else {
           this.sounds.food.play();
@@ -141,16 +141,31 @@ export default {
         this.snake.size++;
         this.snake.speed++;
 
-        this.forage.positionX = Math.abs(
-          Math.round(
-            (Math.random() * this.canvas.width) / this.canvas.gridSize
-          ) - 1
-        );
-        this.forage.positionY = Math.abs(
-          Math.round(
-            (Math.random() * this.canvas.height) / this.canvas.gridSize
-          ) - 1
-        );
+        let forageLocationContol = true;
+
+        while (forageLocationContol) {
+          
+          this.forage.positionX = Math.abs(
+            Math.round(
+              (Math.random() * this.canvas.width) / this.canvas.gridSize
+            ) - 1
+          );
+          this.forage.positionY = Math.abs(
+            Math.round(
+              (Math.random() * this.canvas.height) / this.canvas.gridSize
+            ) - 1
+          );
+
+          
+
+          forageLocationContol = false;
+          this.snake.queue.forEach((element) => {
+            if (element.positionX == this.forage.positionX && element.positionY == this.forage.positionY) {
+              forageLocationContol = true;
+            } 
+          });
+          
+        }
       }
     },
     draw() {
@@ -232,19 +247,35 @@ export default {
         this.sounds.backgroundSound.source.play();
       }
 
-      if (e.keyCode === 37 && this.velocity.positionX !== 1 && this.timerLoopStatus) {
+      if (
+        e.keyCode === 37 &&
+        this.velocity.positionX !== 1 &&
+        this.timerLoopStatus
+      ) {
         this.timerLoopStatus = false;
         this.velocity.positionX = -1;
         this.velocity.positionY = 0;
-      } else if (e.keyCode === 38 && this.velocity.positionY !== 1 && this.timerLoopStatus) {
+      } else if (
+        e.keyCode === 38 &&
+        this.velocity.positionY !== 1 &&
+        this.timerLoopStatus
+      ) {
         this.timerLoopStatus = false;
         this.velocity.positionX = 0;
         this.velocity.positionY = -1;
-      } else if (e.keyCode === 39 && this.velocity.positionX !== -1 && this.timerLoopStatus) {
+      } else if (
+        e.keyCode === 39 &&
+        this.velocity.positionX !== -1 &&
+        this.timerLoopStatus
+      ) {
         this.timerLoopStatus = false;
         this.velocity.positionX = 1;
         this.velocity.positionY = 0;
-      } else if (e.keyCode === 40 && this.velocity.positionY !== -1 && this.timerLoopStatus) {
+      } else if (
+        e.keyCode === 40 &&
+        this.velocity.positionY !== -1 &&
+        this.timerLoopStatus
+      ) {
         this.timerLoopStatus = false;
         this.velocity.positionX = 0;
         this.velocity.positionY = 1;
