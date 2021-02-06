@@ -8,6 +8,8 @@
 
 <h3><a href="https://youtu.be/ZiPDtKqTy6E" target="_blank">YouTube Video Link</a></h3>
 
+<h4><a href="https://repo.ferhatsezer.com.tr/games/vue-snake-game/" target="_blank">Play Game</a></h4>
+
 
 <a href="https://youtu.be/ZiPDtKqTy6E" target="_blank">
 <img src="https://raw.githubusercontent.com/ferhatsezer/Vue-Snake-Game/master/vuejs-snake-game-home.gif" alt="Vue JS Snake Game" title="Vue JS Snake Game" />
