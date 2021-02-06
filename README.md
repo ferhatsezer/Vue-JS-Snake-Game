@@ -10,7 +10,7 @@
 
 
 <a href="https://youtu.be/ZiPDtKqTy6E" target="_blank">
-<img src="https://raw.githubusercontent.com/ferhatsezer/Vue-Snake-Game/master/vuejs-snake-game.gif" alt="SFML Tank Game Two Player" title="SFML Tank Game Two Player" />
+<img src="https://raw.githubusercontent.com/ferhatsezer/Vue-Snake-Game/master/vuejs-snake-game.gif" alt="Vue JS Snake Game" title="Vue JS Snake Game" />
 </a>
 </p>
 
